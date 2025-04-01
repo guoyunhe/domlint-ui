@@ -91,6 +91,6 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "domlint": "^0.3.8"
+    "domlint": "^0.4.0"
   }
 }
