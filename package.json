@@ -1,4 +1,6 @@
 {
+  "name": "domlint-ui",
+  "description": "DOMLint UI (React)",
   "homepage": "https://github.com/guoyunhe/domlint-ui#readme",
   "bugs": {
     "url": "https://github.com/guoyunhe/domlint-ui/issues"
@@ -8,6 +10,7 @@
     "url": "git+https://github.com/guoyunhe/domlint-ui.git"
   },
   "funding": "https://github.com/sponsors/guoyunhe",
+  "license": "MIT",
   "author": {
     "name": "Guo Yunhe",
     "email": "i@guoyunhe.me"
@@ -85,5 +88,9 @@
     "doc": {
       "basename": "/domlint-ui/"
     }
+  },
+  "dependencies": {
+    "classnames": "^2.5.1",
+    "domlint": "^0.3.8"
   }
 }
