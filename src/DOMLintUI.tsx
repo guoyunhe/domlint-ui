@@ -120,11 +120,11 @@ export function DOMLintUI({ config }: DOMLintUIProps) {
                           </span>
                           <span>&nbsp;</span>
                           {!attrReport.pass && (
-                            <span className="domlint-ui-attribute-expected">
-                              [expected:{' '}
-                              {Array.isArray(attrReport.expected)
-                                ? attrReport.expected.map(renderValue)
-                                : renderValue(attrReport.expected || 'none')}
+                            <span className="domlint-ui-attribute-expect">
+                              [expect:{' '}
+                              {Array.isArray(attrReport.expect)
+                                ? attrReport.expect.map(renderValue)
+                                : renderValue(attrReport.expect || 'none')}
                               ]
                             </span>
                           )}
