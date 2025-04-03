@@ -18,12 +18,9 @@ export function DOMLintUI({ config }: DOMLintUIProps) {
   );
   const [report, setReport] = useState<DOMLintReport | null>(null);
 
-  const [width] = useState(600);
-  const [left, setLeft] = useState(window.innerWidth / 2 - width / 2);
-  const [top, setTop] = useState(10);
-
   const [highlightElement, setHighlightElement] = useState<Element | null>(null);
   const highlightRef = useRef<HTMLDivElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -43,15 +40,14 @@ export function DOMLintUI({ config }: DOMLintUIProps) {
 
   return (
     <>
-      <div className="domlint-ui" style={{ left, top, width }}>
+      <div ref={rootRef} className="domlint-ui">
         <div
           className="domlint-ui-toolbar"
           onMouseMove={(e) => {
-            if (e.buttons === 1) {
-              setLeft((prev) =>
-                Math.min(window.innerWidth - 500, Math.max(10, prev + e.movementX)),
-              );
-              setTop((prev) => Math.min(window.innerHeight - 50, Math.max(10, prev + e.movementY)));
+            if (e.buttons === 1 && rootRef.current) {
+              const rect = rootRef.current.getBoundingClientRect();
+              rootRef.current.style.left = `${Math.min(window.innerWidth - 500, Math.max(10, rect.left + e.movementX))}px`;
+              rootRef.current.style.top = `${Math.min(window.innerHeight - 50, Math.max(10, rect.top + e.movementY))}px`;
             }
           }}
         >
