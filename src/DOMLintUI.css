@@ -82,10 +82,12 @@
 .domlint-ui-report {
   height: 300px;
   min-width: 100%;
+  width: 500px;
   min-height: 100px;
   overflow: auto;
   padding: 8px;
   resize: both;
+  box-sizing: border-box;
 }
 
 .domlint-ui-element {
