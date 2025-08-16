@@ -63,7 +63,7 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "domlint": "^0.4.9"
+    "domlint": "^0.6.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
